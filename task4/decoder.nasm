@@ -9,7 +9,6 @@ _start:
 decoder:
 	pop rbx					;get the address of the string
 	xor rdi, rdi
-	xor rax, rax
 	xor rcx, rcx			;to keep the current position in encoded shellcode
 
 allocate_space:
