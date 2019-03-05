@@ -16,7 +16,7 @@ length = len(shellarray)
 encoded = []
 
 encoded_shellcode = shellcode.encode('hex')
-input = "Input:"+ r"\x" + r"\x".join(encoded_shellcode[n:n+2] for n in range(0, len(encoded_shellcode),2))
+input = "Input: "+ r"\x" + r"\x".join(encoded_shellcode[n:n+2] for n in range(0, len(encoded_shellcode),2))
 print input
 
 #print "Old length: %s" % length
@@ -35,5 +35,7 @@ while(j <= len(shellarray)):
 	j = j + 4
 
 output = binascii.hexlify(bytearray(encoded))
-result = "Output" + r"\x" + r"\x".join(output[n : n+2] for n in range(0, len(output), 2))
+result = "Output (\\xXX format):" + r"\x" + r"\x".join(output[n : n+2] for n in range(0, len(output), 2))
 print result
+result2 = "Output (0xXX format): " + r"0x" + r",0x".join(output[n : n+2] for n in range(0, len(output), 2))
+print result2
