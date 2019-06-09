@@ -1,5 +1,4 @@
-import sys
-import os, binascii, codecs
+import os, codecs
 
 def encrypt(plaintext, key):
 	print ("[+] -------- Encryption --------")
